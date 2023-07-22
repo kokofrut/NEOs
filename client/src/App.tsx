@@ -18,6 +18,7 @@ export interface RepeatedState {
 
 }
 
+// in case I want to add multiple scenes
 const Element = ({ data, getInfo, setLoading }: RepeatedState) => {
   return (
     <div className='element-wrapper'>
