@@ -1,12 +1,12 @@
 import axios, { AxiosInstance } from "axios";
 
 const $api: AxiosInstance = axios.create({
-    baseURL: 'https://ssd-api.jpl.nasa.gov/cad.api',
+    baseURL: 'https://api.nasa.gov/neo/rest/v1/',
     headers: {
-        'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
     },
-    withCredentials: true,
+    // withCredentials: true,
 });
 
 export default $api;

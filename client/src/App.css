@@ -7,6 +7,12 @@
   text-align: center;
 }
 
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .app-wr {
   display: flex;
   flex-direction: column;
@@ -14,10 +20,12 @@
   justify-content: space-between;
 
 }
+
 .element-wrapper {
   display: flex;
   width: 100%;
   justify-content: flex-start;
+
   .scene-container {
     overflow: hidden;
     height: 720px;
@@ -33,31 +41,76 @@
       max-width: 20%;
       width: -webkit-fill-available;
 
-      .ast-li {
-        list-style: none;
-        cursor: pointer;
+      .search-cnt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
-        .ast-a {
-          text-decoration: none;
-          color: #e5d840;
+        #asteroids-day {
+          padding: 1rem 2rem;
+          font-family: monospace;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          box-shadow: none;
+          transition: all 0.4s ease-in-out;
+
+          &:hover {
+            background: #2f3636;
+            border: 1px solid rgba(255, 255, 255, 0.062);
+          }
+        }
+      }
+
+      .list-ast {
+        height: 100%;
+
+        .ast-li {
+          list-style: none;
+          cursor: pointer;
+
+          .ast-a {
+            text-decoration: none;
+            color: #e5d840;
+          }
         }
       }
     }
   }
 
+
 }
+
+.right-section h1 {
+  font-size: 2rem;
+  margin: 1rem;
+  user-select:none;
+}
+
+.loader-wr {
+  background-color: transparent;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 .header-wr {
   height: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background: linear-gradient(to right, #9142, #384444);
   box-shadow: 0px 1px 4px rgb(199, 186, 186);
 }
+
 .footer-wr {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100px;
   background: #151515;
 }
