@@ -2,7 +2,6 @@ import { CameraControls, Environment, Html, OrbitControls, useGLTF, useProgress 
 import { RepeatedState } from "../App";
 import { Suspense, useRef, useState } from "react";
 import { Canvas } from "react-three-fiber";
-import { randInt } from "three/src/math/MathUtils.js";
 import { useDateStore } from "../app/dateStore";
 import Asteroid from "./Asteroid";
 

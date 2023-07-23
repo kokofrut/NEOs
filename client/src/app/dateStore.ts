@@ -10,7 +10,7 @@ export const useDateStore = create<DateState>()(
     devtools(
         (set) => ({
             date: new Date(),
-            formatDate: new Date().toISOString().split("T")[0],
+            formatDate: new Date().toLocaleDateString().split(".").reverse().join("-"),
             setCurrDate: (newDate) => set(() => ({ date: newDate, formatDate: newDate.toISOString().split("T")[0] }))
         })
     )
