@@ -1,7 +1,15 @@
 import { ThreeEvent, useFrame } from '@react-three/fiber';
 import { MutableRefObject, useRef } from 'react'
 import * as three from "three";
-const Asteroid = ({ data, index, cameraref, geometry }: { data: any, index: number, cameraref: any, geometry: three.BufferGeometry }) => {
+
+interface AsteroidProps {
+  data: any, 
+  index: number, 
+  cameraref: any,
+  geometry: three.BufferGeometry
+}
+
+const Asteroid = ({ data, index, cameraref, geometry }: AsteroidProps) => {
     const cube: MutableRefObject<three.Mesh | null> = useRef<three.Mesh | null>(null);
     useFrame(() => {
       cube.current!.rotation.x += 0.001;
