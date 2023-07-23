@@ -50,15 +50,8 @@ const Scene = ({ data, getInfo, setLoading }: RepeatedState) => {
           enabled={true}
         />
         <Environment files="space2.hdr" background />
-        {selected != null ? selected == 0 ?
-          <Html position={[0.1, -2, 0]} >
-            <div>
-              <p>{data[selected].name}</p>
-              <p>{data[selected].id}</p>
-            </div>
-          </Html>
-          :
-          <Html position={[selected * 4, -2, 0]} >
+        {selected != null ? 
+          <Html position={[selected * 4 + 0.01, -2, 0]} >
             <div>
               <p>{data[selected].name}</p>
               <p>{data[selected].id}</p>
