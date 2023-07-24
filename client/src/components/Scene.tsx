@@ -28,7 +28,6 @@ const Scene = ({ data, getInfo, setLoading }: RepeatedState) => {
     getInfo(event.target.value)
     setLoading(prev => ({ ...prev, data: true }))
   }
-  console.log(data)
   function handleMenuClick(event: any) {
     const targetId = (event.target as HTMLElement).id;
     const target = data.findIndex((el: any) => el.id === targetId);
