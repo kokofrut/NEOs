@@ -18,7 +18,7 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
-
+  height: 100%;
 }
 
 .element-wrapper {
@@ -28,11 +28,8 @@
 
   .scene-container {
     overflow: hidden;
-    height: 720px;
     width: 100%;
     display: flex;
-    height: calc(100vh - 150px);
-
     .right-section {
       display: flex;
       flex-direction: column;
@@ -42,10 +39,12 @@
       width: -webkit-fill-available;
 
       .search-cnt {
+        max-height: 100px;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
 
         #asteroids-day {
           padding: 1rem 2rem;
@@ -64,11 +63,16 @@
 
       .list-ast {
         height: 100%;
-
+        overflow-y: scroll;
         .ast-li {
           list-style: none;
           cursor: pointer;
-
+          .asteroid-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            font-size: 14px;
+          }
           .ast-a {
             text-decoration: none;
             color: #e5d840;
@@ -84,9 +88,14 @@
 .right-section h1 {
   font-size: 2rem;
   margin: 1rem;
-  user-select:none;
+  user-select: none;
 }
-
+.divider{
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px solid #f9df63;
+  margin-top: 1rem;
+}
 .loader-wr {
   background-color: transparent;
 
@@ -103,7 +112,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, #9142, #384444);
-  box-shadow: 0px 1px 4px rgb(199, 186, 186);
+  box-shadow: 0px 1px 3px #f9df63;
 }
 
 .footer-wr {
@@ -113,4 +122,29 @@
   width: 100%;
   height: 100px;
   background: #151515;
+}
+@media screen and (min-width: 768px) {
+  .scene-container {
+    flex-direction: row;
+    height: calc(100vh - 150px)
+  }
+  .list-ast {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .scene-container {
+    flex-direction: column;
+    min-height: 50vh;
+    height: calc(100vh - 100px)
+  }
+  .right-section {
+    min-width: 100%;
+    max-height: 50vh;
+  }
+  .footer-wr {
+    height: 50px;
+  }
 }
